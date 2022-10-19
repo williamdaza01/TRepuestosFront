@@ -1,0 +1,7 @@
+<div>
+    <select name="selector" #mydata (change)="getId(mydata.value)">
+        <option *ngFor="let data of contratistasList" [value]="data.codigo">
+            {{data.nombre}}
+        </option>
+    </select>   
+</div>
