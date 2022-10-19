@@ -27,20 +27,20 @@ export class ServicioDbpyService {
   }
 
   getSiembrasList():Observable<any[]> {
-    return this.http.get<any[]>(this.APIurl + '/siembras');
+    return this.http.get<any[]>(this.APIurl + '/sedes
   }
 
   postSiembrasList(val:any):Observable<any[]> {
-    return this.http.post<any[]>(this.APIurl + 'siembras/',val);
+    return this.http.post<any[]>(this.APIurl + 'sedes/',val);
   }
 
   putSiembrasList(val:any):Observable<any[]> {
     console.log(val);
     
-    return this.http.put<any[]>(this.APIurl + 'siembras/', val);
+    return this.http.put<any[]>(this.APIurl + 'sedes/', val);
   }
 
   deleteSiembrasList(val:any):Observable<any[]> {
-    return this.http.delete<any[]>(this.APIurl + '/siembras' + val);
+    return this.http.delete<any[]>(this.APIurl + '/sedes' + val);
   }
 }

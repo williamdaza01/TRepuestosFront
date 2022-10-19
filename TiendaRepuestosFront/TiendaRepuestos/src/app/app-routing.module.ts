@@ -1,18 +1,18 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { ArbolesComponent } from './arboles/arboles.component'
-import { MunicipiosComponent } from './municipios/municipios.component'
+import { RepuestosComponent } from './repuestos/repuestos.component'
+import { ClientesComponent } from './clientes/clientes.component'
 import { VeredasComponent } from './veredas/veredas.component'
-import { ContratistasComponent } from './contratistas/contratistas.component'
-import { SiembrasComponent } from './siembras/siembras.component'
+import { EmpleadosComponent } from './empleados/empleados.component'
+import { SedesComponent } from './sedes/sedes.component'
 
 const routes: Routes = [
-  {path: 'arboles', component:ArbolesComponent},
-  {path: 'siembras', component:SiembrasComponent},
-  {path: 'contratistas', component:ContratistasComponent},
+  {path: 'repuestos', component:RepuestosComponent},
+  {path: 'sedes', component:SedesComponent},
+  {path: 'empleados', component:EmpleadosComponent},
   {path: 'veredas', component:VeredasComponent},
-  {path: 'municipios', component:MunicipiosComponent},
+  {path: 'clientes', component:ClientesComponent},
 ];
 
 @NgModule({

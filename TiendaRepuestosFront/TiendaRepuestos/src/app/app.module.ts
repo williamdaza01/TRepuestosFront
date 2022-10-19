@@ -3,17 +3,16 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { MunicipiosComponent } from './municipios/municipios.component';
-import { VerMunicipiosComponent } from './municipios/ver-municipios/ver-municipios.component';
+import { ClientesComponent } from './clientes/clientes.component';
+import { VerClientesComponent } from './clientes/ver-clientes/ver-clientes.component';
 import { VeredasComponent } from './veredas/veredas.component';
-import { ArbolesComponent } from './arboles/arboles.component';
-import { ContratistasComponent } from './contratistas/contratistas.component';
-import { SiembrasComponent } from './siembras/siembras.component';
-import { VerContratistasComponent } from './contratistas/ver-contratistas/ver-contratistas.component';
-import { VerArbolesComponent } from './arboles/ver-arboles/ver-arboles.component';
+import { RepuestosComponent } from './repuestos/repuestos.component';
+import { EmpleadosComponent } from './empleados/empleados.component';
+import { SedesComponent } from './sedes/sedes.component';
+import { VerEmpleadosComponent } from './empleados/ver-empleados/ver-empleados.component';
+import { VerRepuestosComponent } from './repuestos/ver-repuestos/ver-repuestos.component';
 import { VerVeredasComponent } from './veredas/ver-veredas/ver-veredas.component';
-import { VerSiembrasComponent } from './siembras/ver-siembras/ver-siembras.component';
-import { EditarSiembrasComponent } from './siembras/editar-siembras/editar-siembras.component';
+import { VerSedesComponent } from './sedes/ver-sedes/ver-sedes.component';
 import { ServicioDbpyService } from './servicio-dbpy.service';
 
 import { HttpClientModule } from '@angular/common/http';
@@ -22,17 +21,16 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
-    MunicipiosComponent,
-    VerMunicipiosComponent,
+    ClientesComponent,
+    VerClientesComponent,
     VeredasComponent,
-    ArbolesComponent,
-    ContratistasComponent,
-    SiembrasComponent,
-    VerContratistasComponent,
-    VerArbolesComponent,
+    RepuestosComponent,
+    EmpleadosComponent,
+    SedesComponent,
+    VerEmpleadosComponent,
+    VerRepuestosComponent,
     VerVeredasComponent,
-    VerSiembrasComponent,
-    EditarSiembrasComponent
+    VerSedesComponent,
   ],
   imports: [
     BrowserModule,
