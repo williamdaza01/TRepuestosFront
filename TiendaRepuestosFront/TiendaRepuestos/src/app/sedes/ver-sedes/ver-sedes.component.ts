@@ -20,14 +20,14 @@ export class VerSedesComponent implements OnInit {
   id:VerVeredasComponent["id"]=0;
 
   ngOnInit(): void {
-    this.verSiembras();
+    /* this.verSiembras(); */
   }
 
-  verSiembras() {
+/*   verSiembras() {
     this.service.getSiembrasList().subscribe( data => {
       this.sedesList = data;
     })
-  }
+  } */
 
   addSiembra() {
     this.isShow = true;
@@ -46,7 +46,7 @@ export class VerSedesComponent implements OnInit {
 
   closeClick(){
     this.ActivateAddEditSiembra=false;
-    this.verSiembras();
+    /* this.verSiembras(); */
   }
 
   editSiembra(item:any){
@@ -59,7 +59,7 @@ export class VerSedesComponent implements OnInit {
     if(confirm("¿Seguro que desea eliminar la siembra?")) {
       this.service.deleteSiembrasList(item.id).subscribe( data => {
         alert(data.toString());
-        this.verSiembras();
+        /* this.verSiembras(); */
       })
     }
   }

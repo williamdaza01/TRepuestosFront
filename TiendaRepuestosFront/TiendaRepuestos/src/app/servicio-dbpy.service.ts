@@ -26,9 +26,9 @@ export class ServicioDbpyService {
     return this.http.get<any[]>(this.APIurl + '/contratistas');
   }
 
-  getSiembrasList():Observable<any[]> {
-    return this.http.get<any[]>(this.APIurl + '/sedes
-  }
+  /* getSiembrasList():Observable<any[]> {
+    return this.http.get<any[]>(this.APIurl + '/sedes);
+  } */
 
   postSiembrasList(val:any):Observable<any[]> {
     return this.http.post<any[]>(this.APIurl + 'sedes/',val);
