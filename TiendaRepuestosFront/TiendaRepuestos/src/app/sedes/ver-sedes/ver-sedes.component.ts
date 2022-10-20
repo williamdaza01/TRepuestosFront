@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ServicioDbpyService } from 'src/app/servicio-dbpy.service';
-import { VerVeredasComponent } from 'src/app/veredas/ver-veredas/ver-veredas.component';
-import { VeredasComponent } from 'src/app/veredas/veredas.component';
+import { VerModelosComponent } from 'src/app/modelos/ver-modelos/ver-modelos.component';
+import { ModelosComponent } from 'src/app/modelos/modelos.component';
 
 @Component({
   selector: 'app-ver-sedes',
@@ -17,7 +17,7 @@ export class VerSedesComponent implements OnInit {
   ActivateAddEditSiembra:boolean = false;
   sim:any;
   isShow:boolean = false;
-  id:VerVeredasComponent["id"]=0;
+  id:VerModelosComponent["id"]=0;
 
   ngOnInit(): void {
     /* this.verSiembras(); */

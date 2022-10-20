@@ -5,13 +5,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ClientesComponent } from './clientes/clientes.component';
 import { VerClientesComponent } from './clientes/ver-clientes/ver-clientes.component';
-import { VeredasComponent } from './veredas/veredas.component';
+import { ModelosComponent } from './modelos/modelos.component';
 import { RepuestosComponent } from './repuestos/repuestos.component';
 import { EmpleadosComponent } from './empleados/empleados.component';
 import { SedesComponent } from './sedes/sedes.component';
 import { VerEmpleadosComponent } from './empleados/ver-empleados/ver-empleados.component';
 import { VerRepuestosComponent } from './repuestos/ver-repuestos/ver-repuestos.component';
-import { VerVeredasComponent } from './veredas/ver-veredas/ver-veredas.component';
+import { VerModelosComponent } from './modelos/ver-modelos/ver-modelos.component';
 import { VerSedesComponent } from './sedes/ver-sedes/ver-sedes.component';
 import { ServicioDbpyService } from './servicio-dbpy.service';
 
@@ -25,13 +25,13 @@ import { VerMarcasComponent } from './marcas/ver-marcas/ver-marcas.component';
     AppComponent,
     ClientesComponent,
     VerClientesComponent,
-    VeredasComponent,
+    ModelosComponent,
     RepuestosComponent,
     EmpleadosComponent,
     SedesComponent,
     VerEmpleadosComponent,
     VerRepuestosComponent,
-    VerVeredasComponent,
+    VerModelosComponent,
     VerSedesComponent,
     MarcasComponent,
     VerMarcasComponent,
