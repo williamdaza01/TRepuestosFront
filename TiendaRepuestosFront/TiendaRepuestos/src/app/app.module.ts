@@ -17,6 +17,8 @@ import { ServicioDbpyService } from './servicio-dbpy.service';
 
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MarcasComponent } from './marcas/marcas.component';
+import { VerMarcasComponent } from './marcas/ver-marcas/ver-marcas.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +33,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     VerRepuestosComponent,
     VerVeredasComponent,
     VerSedesComponent,
+    MarcasComponent,
+    VerMarcasComponent,
   ],
   imports: [
     BrowserModule,
