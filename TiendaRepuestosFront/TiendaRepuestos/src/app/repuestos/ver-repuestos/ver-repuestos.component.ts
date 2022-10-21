@@ -10,22 +10,49 @@ export class VerRepuestosComponent implements OnInit {
 
   constructor(private service:ServicioDbpyService) { }
 
-  arbolesList:any = [];
+  repuestosList:any = [];
+  Modaltitle:string = "";
+  ActivateAddEditSiembra:boolean = false;
+  sim:any;
 
   ngOnInit(): void {
-    this.verArboles();
+    this.verSiembras();
   }
 
-
-  verArboles(){
-    this.service.getArbolesList().subscribe( data => {
-      this.arbolesList = data;
+  verSiembras() {
+    const getSede =  this.service.getRepuestosList().subscribe( data => {
+      this.repuestosList = data;
     })
+  } 
+
+  addSiembra() {
+    this.sim ={
+      Nombre: 0,
+      Precio: 0,
+      Modelo: 0,
+      Descripcion: 0,
+      Sede: 0
+    }
+    this.Modaltitle="Agregar Repuesto";
+    this.ActivateAddEditSiembra=true;
   }
 
-  getId(value:string){
-    let id;
-    id = value;
-    return id;
+  closeClick(){
+    this.ActivateAddEditSiembra=false;
+  }
+
+  editSiembra(item:any){
+    this.sim=item;
+    this.Modaltitle = "Editar Repuesto";
+    this.ActivateAddEditSiembra = true;
+  }
+
+  deleteSiembra(item:any){
+    if(confirm("¿Seguro que desea eliminar el repuesto?")) {
+      this.service.deleteRepuestosList(item.id).subscribe( data => {
+        alert(data.toString());
+        this.verSiembras();
+      })
+    }
   }
 }

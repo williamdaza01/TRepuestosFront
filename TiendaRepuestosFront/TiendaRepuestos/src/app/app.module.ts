@@ -20,6 +20,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MarcasComponent } from './marcas/marcas.component';
 import { VerMarcasComponent } from './marcas/ver-marcas/ver-marcas.component';
 import { CrearSedeComponent } from './sedes/crear-sede/crear-sede.component';
+import { CrearRepuestosComponent } from './repuestos/crear-repuestos/crear-repuestos.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { CrearSedeComponent } from './sedes/crear-sede/crear-sede.component';
     MarcasComponent,
     VerMarcasComponent,
     CrearSedeComponent,
+    CrearRepuestosComponent,
   ],
   imports: [
     BrowserModule,

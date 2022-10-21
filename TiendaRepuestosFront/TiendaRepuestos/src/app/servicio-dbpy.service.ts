@@ -10,10 +10,21 @@ export class ServicioDbpyService {
 
   constructor(private http:HttpClient) { }
 
-  getArbolesList():Observable<any[]> {
-    return this.http.get<any[]>(this.APIurl + '/arboles');
+  getRepuestosList():Observable<any[]> {
+    return this.http.get<any[]>(this.APIurl + '/repuestos');
   }
 
+  postRepuestosList(val:any):Observable<any[]> {
+    return this.http.post<any[]>(this.APIurl + '/repuestos/',val);
+  }
+
+  putRepuestosList(val:any):Observable<any[]> {
+    console.log(val.id);
+    return this.http.put<any[]>(this.APIurl + `/repuestos/${val.id}` , val);
+  }
+  deleteRepuestosList(val:any):Observable<any[]> {
+    return this.http.delete<any[]>(this.APIurl + '/repuestos/' + val);
+  }
   getVeredasList():Observable<any[]> {
     return this.http.get<any[]>(this.APIurl + '/veredas');
   }

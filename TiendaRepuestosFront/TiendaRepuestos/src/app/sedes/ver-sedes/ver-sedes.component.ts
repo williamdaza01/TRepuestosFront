@@ -58,9 +58,4 @@ export class VerSedesComponent implements OnInit {
     }
   }
 
-  ver(){
-    console.log(this.id);
-    
-  }
-
 }

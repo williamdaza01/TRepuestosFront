@@ -5,6 +5,7 @@
   data-target="#exampleModal"
   data-backdrop="static"
   data-keyboard="false"
+  (click)="addSiembra()"
 >
   Agregar Repuesto
 </button>
@@ -27,9 +28,13 @@
           class="close"
           data-dismiss="modal"
           aria-label="Close"
+          (click)="closeClick()"
         >
           <span aria-hidden="true">&times;</span>
         </button>
+      </div>
+      <div class="modal-body">
+        <app-crear-repuestos [sim] = "sim" *ngIf = "ActivateAddEditSiembra"></app-crear-repuestos>
       </div>
     </div>
   </div>
@@ -46,13 +51,13 @@
     <th>Opciones</th>
   </thead>
   <tbody>
-    <tr>
-      <td>11efsdf3r3rwer3r</td>
-      <td>Limpiaparabrisa</td>
-      <td>10000</td>
-      <td>aveo</td>
-      <td>limpia aveo</td>
-      <td>Sede sur</td>
+    <tr *ngFor = "let data of repuestosList">
+      <td>{{data.id}}</td>
+      <td>{{data.Nombre}}</td>
+      <td>{{data.Precio}}</td>
+      <td>{{data.Modelo}}</td>
+      <td>{{data.Descripcion}}o</td>
+      <td>{{data.Sede}}</td>
       <td>
         <button
           type="button"
