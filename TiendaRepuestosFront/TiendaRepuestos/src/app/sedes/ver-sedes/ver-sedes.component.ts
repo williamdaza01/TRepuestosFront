@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ServicioDbpyService } from 'src/app/servicio-dbpy.service';
 import { VerModelosComponent } from 'src/app/modelos/ver-modelos/ver-modelos.component';
-import { ModelosComponent } from 'src/app/modelos/modelos.component';
 
 @Component({
   selector: 'app-ver-sedes',
@@ -20,27 +19,22 @@ export class VerSedesComponent implements OnInit {
   id:VerModelosComponent["id"]=0;
 
   ngOnInit(): void {
-    /* this.verSiembras(); */
+    this.verSiembras();
   }
 
-/*   verSiembras() {
-    this.service.getSiembrasList().subscribe( data => {
+  verSiembras() {
+    const getSede =  this.service.getSedesList().subscribe( data => {
       this.sedesList = data;
     })
-  } */
+  } 
 
   addSiembra() {
-    this.isShow = true;
     this.sim ={
-      codigo: 0,
-      codigo_vereda: 0,
-      codigo_arbol: 0,
-      codigo_contratista: 0,
-      fecha:"",
-      total_arboles:0,
-      total_hectareas:0
+      Nombre: 0,
+      Direccion: 0,
+      Telefono: 0
     }
-    this.Modaltitle="Agregar Siembra";
+    this.Modaltitle="Agregar Sede";
     this.ActivateAddEditSiembra=true;
   }
 
@@ -51,15 +45,15 @@ export class VerSedesComponent implements OnInit {
 
   editSiembra(item:any){
     this.sim=item;
-    this.Modaltitle = "Editar Siembra";
+    this.Modaltitle = "Editar Sede";
     this.ActivateAddEditSiembra = true;
   }
 
   deleteSiembra(item:any){
-    if(confirm("¿Seguro que desea eliminar la siembra?")) {
-      this.service.deleteSiembrasList(item.id).subscribe( data => {
+    if(confirm("¿Seguro que desea eliminar la sede?")) {
+      this.service.deleteSedesList(item.id).subscribe( data => {
         alert(data.toString());
-        /* this.verSiembras(); */
+        this.verSiembras();
       })
     }
   }

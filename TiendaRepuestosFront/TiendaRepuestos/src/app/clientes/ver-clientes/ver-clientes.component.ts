@@ -17,9 +17,9 @@ export class VerClientesComponent implements OnInit {
   }
 
   verMunicipios(){
-    this.service.getMunicipiosList().subscribe( data => {
+    /* this.service.getMunicipiosList().subscribe( data => {
       this.municipiosList = data;
-    });
+    }); */
   }
   
   getId(value:string){

@@ -6,13 +6,9 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ServicioDbpyService {
-  readonly APIurl = "http://127.0.0.1:8000/";
+  readonly APIurl = "http://localhost:8080";
 
   constructor(private http:HttpClient) { }
-
-  getMunicipiosList():Observable<any[]> {
-    return this.http.get<any[]>(this.APIurl + '/municipios');
-  }
 
   getArbolesList():Observable<any[]> {
     return this.http.get<any[]>(this.APIurl + '/arboles');
@@ -30,17 +26,20 @@ export class ServicioDbpyService {
     return this.http.get<any[]>(this.APIurl + '/sedes);
   } */
 
-  postSiembrasList(val:any):Observable<any[]> {
-    return this.http.post<any[]>(this.APIurl + 'sedes/',val);
+  getSedesList():Observable<any[]> {
+    return this.http.get<any[]>(this.APIurl + '/sedes');
   }
 
-  putSiembrasList(val:any):Observable<any[]> {
-    console.log(val);
-    
-    return this.http.put<any[]>(this.APIurl + 'sedes/', val);
+  postSedesList(val:any):Observable<any[]> {
+    return this.http.post<any[]>(this.APIurl + '/sedes/',val);
   }
 
-  deleteSiembrasList(val:any):Observable<any[]> {
-    return this.http.delete<any[]>(this.APIurl + '/sedes' + val);
+  putSedesList(val:any):Observable<any[]> {
+    console.log(val.id);
+    return this.http.put<any[]>(this.APIurl + `/sedes/${val.id}` , val);
+  }
+
+  deleteSedesList(val:any):Observable<any[]> {
+    return this.http.delete<any[]>(this.APIurl + '/sedes/' + val);
   }
 }

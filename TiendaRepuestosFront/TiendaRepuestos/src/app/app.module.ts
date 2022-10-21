@@ -19,6 +19,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MarcasComponent } from './marcas/marcas.component';
 import { VerMarcasComponent } from './marcas/ver-marcas/ver-marcas.component';
+import { CrearSedeComponent } from './sedes/crear-sede/crear-sede.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { VerMarcasComponent } from './marcas/ver-marcas/ver-marcas.component';
     VerSedesComponent,
     MarcasComponent,
     VerMarcasComponent,
+    CrearSedeComponent,
   ],
   imports: [
     BrowserModule,
