@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ServicioDbpyService } from 'src/app/servicio-dbpy.service';
-import { VerModelosComponent } from 'src/app/modelos/ver-modelos/ver-modelos.component';
 
 @Component({
   selector: 'app-ver-sedes',
@@ -16,7 +15,6 @@ export class VerSedesComponent implements OnInit {
   ActivateAddEditSiembra:boolean = false;
   sim:any;
   isShow:boolean = false;
-  id:VerModelosComponent["id"]=0;
 
   ngOnInit(): void {
     this.verSedes();
@@ -40,7 +38,7 @@ export class VerSedesComponent implements OnInit {
 
   closeClick(){
     this.ActivateAddEditSiembra=false;
-    /* this.verSedes(); */
+    this.verSedes();
   }
 
   editSede(item:any){

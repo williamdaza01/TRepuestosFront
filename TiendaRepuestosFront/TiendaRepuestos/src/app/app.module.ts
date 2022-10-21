@@ -22,6 +22,9 @@ import { VerMarcasComponent } from './marcas/ver-marcas/ver-marcas.component';
 import { CrearSedeComponent } from './sedes/crear-sede/crear-sede.component';
 import { CrearRepuestosComponent } from './repuestos/crear-repuestos/crear-repuestos.component';
 import { CrearMarcasComponent } from './marcas/crear-marcas/crear-marcas.component';
+import { CrearModelosComponent } from './modelos/crear-modelos/crear-modelos.component';
+import { CrearClientesComponent } from './clientes/crear-clientes/crear-clientes.component';
+import { CrearEmpleadosComponent } from './empleados/crear-empleados/crear-empleados.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +44,9 @@ import { CrearMarcasComponent } from './marcas/crear-marcas/crear-marcas.compone
     CrearSedeComponent,
     CrearRepuestosComponent,
     CrearMarcasComponent,
+    CrearModelosComponent,
+    CrearClientesComponent,
+    CrearEmpleadosComponent,
   ],
   imports: [
     BrowserModule,
