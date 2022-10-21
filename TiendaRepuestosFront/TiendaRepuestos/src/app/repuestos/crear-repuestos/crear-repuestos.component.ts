@@ -27,11 +27,11 @@ export class CrearRepuestosComponent implements OnInit {
     this.sede = this.sim.sede;
   }
 
-  addSiembra(){
+  addRepuesto(){
     const val ={
       Nombre: this.nombre,
-      Telefono: this.precio,
-      Direccion: this.modelo,
+      Precio: this.precio,
+      Modelo: this.modelo,
       Descripcion: this.descripcion,
       Sede: this.sede
     };
@@ -40,7 +40,7 @@ export class CrearRepuestosComponent implements OnInit {
     });
   }
 
-  updateSiembra(){
+  updateRepuesto(){
     const val ={
       id: this.id,
       Nombre: this.nombre,

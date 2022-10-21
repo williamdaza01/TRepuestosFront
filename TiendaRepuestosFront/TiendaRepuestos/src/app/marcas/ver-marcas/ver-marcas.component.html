@@ -5,6 +5,7 @@
   data-target="#exampleModal"
   data-backdrop="static"
   data-keyboard="false"
+  (click)="addMarca()"
 >
   Agregar Marca
 </button>
@@ -27,9 +28,16 @@
           class="close"
           data-dismiss="modal"
           aria-label="Close"
+          (click)="closeClick()"
         >
           <span aria-hidden="true">&times;</span>
         </button>
+      </div>
+      <div class="modal-body">
+        <app-crear-marcas
+          [sim]="sim"
+          *ngIf="ActivateAddEditSiembra"
+        ></app-crear-marcas>
       </div>
     </div>
   </div>
@@ -42,15 +50,16 @@
     <th>Opciones</th>
   </thead>
   <tbody>
-    <tr>
-      <td>11efsdf3r3rwer3r</td>
-      <td>Mazda</td>
+    <tr *ngFor="let data of marcasList">
+      <td>{{ data.id }}</td>
+      <td>{{ data.Nombre }}</td>
       <td>
         <button
           type="button"
           class="btn btn-primary mr-1"
           data-toggle="modal"
           data-target="#exampleModal"
+          (click)="editMarca(data)"
           data-backdrop="static"
           data-keyboard="false"
         >
@@ -66,7 +75,11 @@
             ></path>
           </svg>
         </button>
-        <button type="button" class="btn btn-danger mr-1">
+        <button
+          type="button"
+          class="btn btn-danger mr-1"
+          (click)="deleteMarca(data)"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 16 16"
@@ -83,5 +96,3 @@
     </tr>
   </tbody>
 </table>
-
-

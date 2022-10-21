@@ -16,16 +16,16 @@ export class VerRepuestosComponent implements OnInit {
   sim:any;
 
   ngOnInit(): void {
-    this.verSiembras();
+    this.verRepuestos();
   }
 
-  verSiembras() {
+  verRepuestos() {
     const getSede =  this.service.getRepuestosList().subscribe( data => {
       this.repuestosList = data;
     })
   } 
 
-  addSiembra() {
+  addRepuesto() {
     this.sim ={
       Nombre: 0,
       Precio: 0,
@@ -41,17 +41,17 @@ export class VerRepuestosComponent implements OnInit {
     this.ActivateAddEditSiembra=false;
   }
 
-  editSiembra(item:any){
+  editRepuesto(item:any){
     this.sim=item;
     this.Modaltitle = "Editar Repuesto";
     this.ActivateAddEditSiembra = true;
   }
 
-  deleteSiembra(item:any){
+  deleteRepuesto(item:any){
     if(confirm("¿Seguro que desea eliminar el repuesto?")) {
       this.service.deleteRepuestosList(item.id).subscribe( data => {
         alert(data.toString());
-        this.verSiembras();
+        this.verRepuestos();
       })
     }
   }

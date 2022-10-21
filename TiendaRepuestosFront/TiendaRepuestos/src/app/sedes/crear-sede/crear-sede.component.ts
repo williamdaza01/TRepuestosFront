@@ -23,7 +23,7 @@ export class CrearSedeComponent implements OnInit {
     this.direccion = this.sim.direccion;
   }
 
-  addSiembra(){
+  addSede(){
     const val ={
       Nombre: this.nombre,
       Telefono: this.telefono,
@@ -34,7 +34,7 @@ export class CrearSedeComponent implements OnInit {
     });
   }
 
-  updateSiembra(){
+  updateSede(){
     const val ={
       id: this.id,
       Nombre: this.nombre,

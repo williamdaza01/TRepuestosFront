@@ -5,7 +5,7 @@
   data-target="#exampleModal"
   data-backdrop="static"
   data-keyboard="false"
-  (click)="addSiembra()"
+  (click)="addRepuesto()"
 >
   Agregar Repuesto
 </button>
@@ -34,7 +34,10 @@
         </button>
       </div>
       <div class="modal-body">
-        <app-crear-repuestos [sim] = "sim" *ngIf = "ActivateAddEditSiembra"></app-crear-repuestos>
+        <app-crear-repuestos
+          [sim]="sim"
+          *ngIf="ActivateAddEditSiembra"
+        ></app-crear-repuestos>
       </div>
     </div>
   </div>
@@ -51,19 +54,20 @@
     <th>Opciones</th>
   </thead>
   <tbody>
-    <tr *ngFor = "let data of repuestosList">
-      <td>{{data.id}}</td>
-      <td>{{data.Nombre}}</td>
-      <td>{{data.Precio}}</td>
-      <td>{{data.Modelo}}</td>
-      <td>{{data.Descripcion}}o</td>
-      <td>{{data.Sede}}</td>
+    <tr *ngFor="let data of repuestosList">
+      <td>{{ data.id }}</td>
+      <td>{{ data.Nombre }}</td>
+      <td>{{ data.Precio }}</td>
+      <td>{{ data.Modelo }}</td>
+      <td>{{ data.Descripcion }}o</td>
+      <td>{{ data.Sede }}</td>
       <td>
         <button
           type="button"
           class="btn btn-primary mr-1"
           data-toggle="modal"
           data-target="#exampleModal"
+          (click)="editRepuesto(data)"
           data-backdrop="static"
           data-keyboard="false"
         >
@@ -79,7 +83,11 @@
             ></path>
           </svg>
         </button>
-        <button type="button" class="btn btn-danger mr-1">
+        <button
+          type="button"
+          class="btn btn-danger mr-1"
+          (click)="deleteRepuesto(data)"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 16 16"
@@ -96,4 +104,3 @@
     </tr>
   </tbody>
 </table>
-

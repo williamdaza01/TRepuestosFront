@@ -18,7 +18,7 @@ export class VerModelosComponent implements OnInit {
   }
 
   verVeredas(){
-    this.service.getVeredasList().subscribe( data => {
+    this.service.getModelosList().subscribe( data => {
       this.modelosList = data;
     })
   }

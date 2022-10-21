@@ -25,17 +25,44 @@ export class ServicioDbpyService {
   deleteRepuestosList(val:any):Observable<any[]> {
     return this.http.delete<any[]>(this.APIurl + '/repuestos/' + val);
   }
-  getVeredasList():Observable<any[]> {
-    return this.http.get<any[]>(this.APIurl + '/veredas');
+
+  getMarcasList():Observable<any[]> {
+    return this.http.get<any[]>(this.APIurl + '/marcas');
+  }
+
+  postMarcasList(val:any):Observable<any[]> {
+    return this.http.post<any[]>(this.APIurl + '/marcas/',val);
+  }
+
+  putMarcasList(val:any):Observable<any[]> {
+    console.log(val.id);
+    return this.http.put<any[]>(this.APIurl + `/marcas/${val.id}` , val);
+  }
+
+  deleteMarcasList(val:any):Observable<any[]> {
+    return this.http.delete<any[]>(this.APIurl + '/marcas/' + val);
+  }
+
+  getModelosList():Observable<any[]> {
+    return this.http.get<any[]>(this.APIurl + '/modelos');
+  }
+
+  postModelosList(val:any):Observable<any[]> {
+    return this.http.post<any[]>(this.APIurl + '/modelos/',val);
+  }
+
+  putModelosList(val:any):Observable<any[]> {
+    console.log(val.id);
+    return this.http.put<any[]>(this.APIurl + `/modelos/${val.id}` , val);
+  }
+
+  deleteModelosList(val:any):Observable<any[]> {
+    return this.http.delete<any[]>(this.APIurl + '/modelos/' + val);
   }
 
   getContratistasList():Observable<any[]> {
     return this.http.get<any[]>(this.APIurl + '/contratistas');
   }
-
-  /* getSiembrasList():Observable<any[]> {
-    return this.http.get<any[]>(this.APIurl + '/sedes);
-  } */
 
   getSedesList():Observable<any[]> {
     return this.http.get<any[]>(this.APIurl + '/sedes');

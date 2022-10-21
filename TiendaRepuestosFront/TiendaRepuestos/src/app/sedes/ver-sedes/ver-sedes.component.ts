@@ -19,16 +19,16 @@ export class VerSedesComponent implements OnInit {
   id:VerModelosComponent["id"]=0;
 
   ngOnInit(): void {
-    this.verSiembras();
+    this.verSedes();
   }
 
-  verSiembras() {
+  verSedes() {
     const getSede =  this.service.getSedesList().subscribe( data => {
       this.sedesList = data;
     })
   } 
 
-  addSiembra() {
+  addSede() {
     this.sim ={
       Nombre: 0,
       Direccion: 0,
@@ -40,20 +40,20 @@ export class VerSedesComponent implements OnInit {
 
   closeClick(){
     this.ActivateAddEditSiembra=false;
-    /* this.verSiembras(); */
+    /* this.verSedes(); */
   }
 
-  editSiembra(item:any){
+  editSede(item:any){
     this.sim=item;
     this.Modaltitle = "Editar Sede";
     this.ActivateAddEditSiembra = true;
   }
 
-  deleteSiembra(item:any){
+  deleteSede(item:any){
     if(confirm("¿Seguro que desea eliminar la sede?")) {
       this.service.deleteSedesList(item.id).subscribe( data => {
         alert(data.toString());
-        this.verSiembras();
+        this.verSedes();
       })
     }
   }
