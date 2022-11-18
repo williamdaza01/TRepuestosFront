@@ -1,1 +1,28 @@
-<p>crear-empleados works!</p>
+<div class="forms-gorup row">
+    <label class="col-sm-2 col-form-label">Nombre</label>
+    <div class="col-sm-10">
+        <input type="text" class="form-control" [(ngModel)]="nombre"
+        placeholder="Nombre de repuesto">
+    </div>
+    <label class="col-sm-2 col-form-label">Apellido</label>
+    <div class="col-sm-10">
+        <input type="text" class="form-control" [(ngModel)]="apellido"
+        placeholder="Nombre de repuesto">
+    </div>
+    <label class="col-sm-2 col-form-label">DNI</label>
+    <div class="col-sm-10">
+        <input type="text" class="form-control" [(ngModel)]="dni"
+        placeholder="Nombre de repuesto">
+    </div>
+    <label class="col-sm-2 col-form-label">Sede</label>
+    <div class="col-sm-10">
+        <input type="text" class="form-control" [(ngModel)]="sede"
+        placeholder="Nombre de repuesto">
+    </div>
+    <button (click)="addMarca()" class="btn btn-primary">
+        Agregar
+    </button>
+    <button (click)="updateMarca()" class="btn btn-primary">
+        Actualizar
+    </button>
+</div>

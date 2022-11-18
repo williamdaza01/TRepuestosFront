@@ -10,22 +10,47 @@ export class VerEmpleadosComponent implements OnInit {
 
   constructor(private service:ServicioDbpyService) { }
 
-  contratistasList:any = [];
+  EmpleadosList:any = [];
+  Modaltitle:string = "";
+  ActivateAddEditSiembra:boolean = false;
+  sim:any;
 
   ngOnInit(): void {
-    this.verContratistas();
+    this.verEmpleados();
   }
 
-  verContratistas(){
-    this.service.getContratistasList().subscribe( data => {
-      this.contratistasList = data;
+  verEmpleados(){
+    this.service.getEmpleadosList().subscribe( data => {
+      this.EmpleadosList = data;
     })
   }
 
-  getId(value:string){
-    let id;
-    id = value;
-    return id;
+  addMarca() {
+    this.sim ={
+      Nombre: 0,
+    }
+    this.Modaltitle="Agregar Empleado";
+    this.ActivateAddEditSiembra=true;
+  }
+
+  closeClick(){
+    this.ActivateAddEditSiembra=false;
+  }
+
+  editMarca(item:any){
+    this.sim=item;
+    this.Modaltitle = "Editar Empleado";
+    this.ActivateAddEditSiembra = true;
+  }
+
+  deleteMarca(item:any){
+    if(confirm("¿Seguro que desea eliminar el Empleado?")) {
+      this.service.deleteEmpleadosList(item.id).subscribe( data => {
+        alert(data.toString());
+        this.verEmpleados();
+      })
+    }
+    window.location.reload()
   }
 
 }

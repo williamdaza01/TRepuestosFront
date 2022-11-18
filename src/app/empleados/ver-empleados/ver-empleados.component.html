@@ -5,6 +5,7 @@
   data-target="#exampleModal"
   data-backdrop="static"
   data-keyboard="false"
+  (click)="addMarca()"
 >
   Agregar Empleado
 </button>
@@ -27,10 +28,15 @@
           class="close"
           data-dismiss="modal"
           aria-label="Close"
+          (click)="closeClick()"
         >
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
+      <div><app-crear-empleados
+        [sim]="sim"
+        *ngIf="ActivateAddEditSiembra"
+      ></app-crear-empleados></div>
     </div>
   </div>
 </div>
@@ -45,18 +51,19 @@
     <th>Opciones</th>
   </thead>
   <tbody>
-    <tr>
-      <td>11efsdf3r3rwer3r</td>
-      <td>Carla</td>
-      <td>Leon</td>
-      <td>1423354</td>
-      <td>Sede Norte</td>
+    <tr *ngFor="let data of EmpleadosList">
+      <td>{{data.id}}</td>
+      <td>{{data.Nombre}}</td>
+      <td>{{data.Apellido}}</td>
+      <td>{{data.DNI}}</td>
+      <td>{{data.Sede}}</td>
       <td>
         <button
           type="button"
           class="btn btn-primary mr-1"
           data-toggle="modal"
           data-target="#exampleModal"
+          (click)="editMarca(data)"
           data-backdrop="static"
           data-keyboard="false"
         >
@@ -72,7 +79,11 @@
             ></path>
           </svg>
         </button>
-        <button type="button" class="btn btn-danger mr-1">
+        <button
+          type="button"
+          class="btn btn-danger mr-1"
+          (click)="deleteMarca(data)"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 16 16"

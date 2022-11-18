@@ -10,21 +10,46 @@ export class VerClientesComponent implements OnInit {
 
   constructor(private service:ServicioDbpyService) { }
 
-  municipiosList:any = [];
+  ClientesList:any = [];
+  Modaltitle:string = "";
+  ActivateAddEditSiembra:boolean = false;
+  sim:any;
   
   ngOnInit(): void {
     this.verMunicipios();
   }
 
   verMunicipios(){
-    /* this.service.getMunicipiosList().subscribe( data => {
-      this.municipiosList = data;
-    }); */
+     this.service.getClientesList().subscribe( data => {
+      this.ClientesList = data;
+    }); 
   }
   
-  getId(value:string){
-    let id;
-    id = value;
-    return id;
+  addMarca() {
+    this.sim ={
+      Nombre: 0,
+    }
+    this.Modaltitle="Agregar Empleado";
+    this.ActivateAddEditSiembra=true;
+  }
+
+  closeClick(){
+    this.ActivateAddEditSiembra=false;
+  }
+
+  editMarca(item:any){
+    this.sim=item;
+    this.Modaltitle = "Editar Cliente";
+    this.ActivateAddEditSiembra = true;
+  }
+
+  deleteMarca(item:any){
+    if(confirm("¿Seguro que desea eliminar el Cliente?")) {
+      this.service.deleteClientesList(item.id).subscribe( data => {
+        alert(data.toString());
+        this.verMunicipios();
+      })
+    }
+    window.location.reload()
   }
 }
